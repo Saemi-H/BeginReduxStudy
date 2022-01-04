@@ -8,11 +8,15 @@ import { bindActionCreators } from 'redux';
 
 class CounterContainer extends Component{
     handleIncrement = () =>{
-        this.props.increment();
+        // this.props.increment();
+        const {CounterActions} = this.props;
+        CounterActions.increment();
     }
 
     handleDecrement=()=>{
-        this.props.decrement();
+        // this.props.decrement();
+        const {CounterActions} = this.props;
+        CounterActions.decrement();
     }
     render(){
         const {handleIncrement, handleDecrement} = this;
@@ -51,5 +55,5 @@ const mapStateToProps = (state) => ({
     //       increment: () => dispatch(counterActions.increment()),
     //       decrement: ()=> dispatch(counterActions.decrement())
     //   })
-        (dispatch) => {counterActions : bindActionCreators(counterActions, dispatch)}
+    (dispatch) => ({CounterActions : bindActionCreators(counterActions, dispatch)})
   )(CounterContainer);
