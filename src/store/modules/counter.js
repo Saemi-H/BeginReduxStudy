@@ -12,7 +12,7 @@ const DECREMENT = 'counter/DECREMENT';
 // export const decrement=()=>({type: DECREMENT});
 
 export const increment = createAction(INCREMENT);
-export const increment = createAction(DECREMENT);
+export const decrement = createAction(DECREMENT);
 
 // define initial state
 const initialState={
@@ -29,15 +29,15 @@ export default handleActions({
 }, initialState)
 
 // create Reducer, export
-export default function reducer(state=initialState, action){
-    // return depends on action
-    // define state = initialState
-    switch(action.type){
-        case INCREMENT:
-            return {number : state.number + 1};
-        case DECREMENT:
-            return {number : state.number - 1};
-        default:
-            return state;
-    }
-}
+// export default function reducer(state=initialState, action){
+//     // return depends on action
+//     // define state = initialState
+//     switch(action.type){
+//         case INCREMENT:
+//             return {number : state.number + 1};
+//         case DECREMENT:
+//             return {number : state.number - 1};
+//         default:
+//             return state;
+//     }
+// }
