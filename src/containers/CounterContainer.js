@@ -51,5 +51,5 @@ const mapStateToProps = (state) => ({
     //       increment: () => dispatch(counterActions.increment()),
     //       decrement: ()=> dispatch(counterActions.decrement())
     //   })
-        (dispatch) => bindActionCreators(counterActions, dispatch)
+        (dispatch) => {counterActions : bindActionCreators(counterActions, dispatch)}
   )(CounterContainer);
