@@ -52,4 +52,4 @@ $ yarn add redux react-redux redux-actions immutable
     - index.js
   - configure.js
   - index.js
-  - actionCreators.js
+  - actionCreators.js# BeginReduxStudy
