@@ -1,5 +1,5 @@
 // 카운터 관련 상태 로직
-import { createAction } from "redux-actions";
+import { createAction, handleActions } from "redux-actions";
 
 
 // define action tyle
@@ -8,13 +8,25 @@ const DECREMENT = 'counter/DECREMENT';
 
 // actions 
 // export to use in different files
-export const increment=()=>({type: INCREMENT});
-export const decrement=()=>({type: DECREMENT});
+// export const increment=()=>({type: INCREMENT});
+// export const decrement=()=>({type: DECREMENT});
+
+export const increment = createAction(INCREMENT);
+export const increment = createAction(DECREMENT);
 
 // define initial state
 const initialState={
     number : 0
 };
+
+// handleActions first param = execute actions
+// 2nd param = initial state
+export default handleActions({
+    [INCREMENT] : (state, action) => {
+        return {number : state.number + 1};
+    },
+    [DECREMENT] : ({number}) => ({number : number - 1})
+}, initialState)
 
 // create Reducer, export
 export default function reducer(state=initialState, action){
