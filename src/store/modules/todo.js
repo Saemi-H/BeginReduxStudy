@@ -1,4 +1,4 @@
-import { Map } from "immutable";
+import { Map, List } from "immutable";
 import { createAction, handleActions } from "redux-actions";
 
 const CHANGE_INPUT = 'todo/CHANGE_INPUT';
